@@ -1,0 +1,4 @@
+@EndUserText.label: 'Product Header Readonly SD'
+define service ZC_PRDHDR_RO_SD {
+  expose ZC_PRDHDR_RO as PRDHEADER;
+}

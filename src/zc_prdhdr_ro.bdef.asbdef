@@ -1,0 +1,13 @@
+projection;
+
+define behavior for ZC_PRDHDR_RO alias PRDHDR
+use etag
+{
+
+//   use create;
+//  use update;
+//  use delete;
+
+
+  use action maxLife;
+}

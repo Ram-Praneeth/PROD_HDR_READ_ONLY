@@ -1,0 +1,19 @@
+managed implementation in class zbp_i_prdhdr_ro unique;
+// Whenever a Action is required by using button,
+// always create/implement the behavior class,
+// else the data will not be displayed with
+// short dump
+
+define behavior for Zi_Prdhdr_Ro //alias <alias_name>
+persistent table ZPROD_HDR
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+//  create;
+//  update;
+//  delete;
+
+  // instance action and dynamic action control
+  action ( features : instance ) maxLife result [1] $self;
+}
