@@ -12,9 +12,30 @@ ENDCLASS.
 CLASS lhc_Zi_Prdhdr_Ro IMPLEMENTATION.
 
   METHOD get_instance_features.
+
+*  READ ENTITIES of ZI_PRDHDR_RO in LOCAL MODE
+*  ENTITY PRDHDR
+*  FIELDS ( Lifetime  )
+*  WITH CORRESPONDING #(  keys )
+*  RESULT DATA(lt_prod_hdr)
+*  FAILED failed.
+
   ENDMETHOD.
 
   METHOD maxLife.
+
+*    READ ENTITIES of ZI_PRDHDR_RO in LOCAL MODE
+*  ENTITY PRDHDR
+*  FIELDS ( Lifetime  )
+*  WITH CORRESPONDING #(  keys )
+*  RESULT DATA(lt_prod_hdr)
+*  FAILED failed.
+*
+*  DELETE lt_prod_hdr where Lifetime < 6.
+
+
+
+
   ENDMETHOD.
 
 ENDCLASS.

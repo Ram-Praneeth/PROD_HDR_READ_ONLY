@@ -26,10 +26,12 @@ define root view entity ZC_PRDHDR_RO
 
       @UI.lineItem: [{position: 10, importance: #HIGH, label: 'Product Id' },
                      { type: #FOR_ACTION,dataAction: 'maxLife',label: 'Max Life' }]
-      @UI.fieldGroup: [{qualifier: 'GeneralData1',position: 10,importance: #HIGH, label: 'Product Id' },
-                       {type: #FOR_ACTION,dataAction: 'maxLife',label: 'Max Life' }]
-      //     --> Use '@UI.identification' only when #IDENTIFICATION_REFERENCE is used in Facet->type
-      @UI.identification: [{position: 10,label: 'Product Id' }]
+      // UI.fieldGroup only in Read only Apps and non 'CUD' behavior scenarios 
+      @UI.fieldGroup: [{qualifier: 'GeneralData1',position: 10,importance: #HIGH, label: 'Product Id' }]
+      // Use '@UI.identification' only when #IDENTIFICATION_REFERENCE is used in Facet->type
+      // Add actions in both Lineitem and Identification annotations
+      @UI.identification: [{position: 10,label: 'Product Id' },
+                           {type: #FOR_ACTION,dataAction: 'maxLife',label: 'Max Life' }]
       @UI.selectionField: [{position: 10 }]
       @EndUserText.quickInfo: 'Product Identification'
       @Search.defaultSearchElement: true
